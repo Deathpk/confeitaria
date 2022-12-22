@@ -17,7 +17,7 @@ const Gallery = (images) => {
                                         layout='responsive'
                                         objectFit='cover'
                                     />
-                                    <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden opacity-0 hover:opacity-100 duration-300">
+                                    <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden opacity-0 md:hover:opacity-100 md:duration-300">
                                         <div className="flex justify-center items-center h-full z-2 p-5">
                                             <div className='absolute top-2 left-2 right-2 bottom-2 bg-black/50 z-[2]'/>
                                             <p className="text-white z-10 text-1xl">{image.description}</p>

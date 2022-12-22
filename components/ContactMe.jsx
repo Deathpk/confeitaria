@@ -2,73 +2,70 @@ import React, { useRef } from "react";
 
 const ContactMe = () => {
     const nameRef = useRef();
-    const selectedProductRef = useRef();
+    const messageRef = useRef();
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        let whatsAppNumber = "5531995411115";
+        let message = encodeURI(`Olá! me chamo ${nameRef.current.value} e conheci o seu trabalho pelo seu site!\n Mensagem: ${messageRef.current.value}`);
+        let apiLink = `https://api.whatsapp.com/send?phone=${whatsAppNumber}&text=${message}`;
+        window.location.replace(apiLink);
+    }
     
     return (
         <div className="mt-5" id="contacte-me">
-            <h1 className="flex justify-center text-black font-bold text-6xl cursive-title">Faça um orçamento!</h1>
-            <div class="flex justify-center items-center p-6 w-full">
-                <form>
-                    <div class="form-group mb-6">
-                        <input type="text" class="form-control block
-                            w-full
-                            px-3
-                            py-1.5
-                            text-base
-                            font-normal
-                            text-gray-700
-                            bg-white bg-clip-padding
-                            border border-solid border-gray-300
-                            rounded
-                            transition
-                            ease-in-out
-                            m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput90"
-                            placeholder="Nome"/>
-                    </div>
-                    <div class="form-group mb-6">
-                        <select class="form-select appearance-none
-                            block
-                            w-full
-                            px-3
-                            py-1.5
-                            text-base
-                            font-normal
-                            text-gray-700
-                            bg-white bg-clip-padding bg-no-repeat
-                            border border-solid border-gray-300
-                            rounded
-                            transition
-                            ease-in-out
-                            m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example" placeholder="Nome">
-                                <option selected>Selecione o produto desejado</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                        </select>
-                        </div>
-                    
-                    <button type="submit" class="
-                    w-full
-                    px-6
-                    py-2.5
-                    bg-blue-600
-                    text-white
-                    font-medium
-                    text-xs
-                    leading-tight
-                    uppercase
-                    rounded
-                    shadow-md
-                    hover:bg-blue-700 hover:shadow-lg
-                    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-                    active:bg-blue-800 active:shadow-lg
-                    transition
-                    duration-150
-                    ease-in-out">Enviar</button>
-                </form>
-            </div>
+            <h1 className="flex justify-center text-black font-bold text-6xl cursive-title">Faça um orçamento</h1>
+            <h2 className="flex justify-center text-3xl font-bold cursive-title text-black">Via WhatsApp</h2>
+            <form className="w-full max-w-sm flex-col items-center justify-center md:mx-[37%] my-5" onSubmit={handleFormSubmit}>
+                <div className="border-b-2 border-rose-700 mb-12">
+                    <input 
+                        type="text"
+                        id="name"
+                        required
+                        className="
+                        appearance-none
+                        bg-transparent
+                        border-none w-full
+                        text-black
+                        mr-3 py-1 px-2
+                        leading-tight
+                        focus:outline-none"
+                        placeholder="Nome completo"
+                        ref={nameRef}
+                    />
+                </div>
+                <div className="mb-12">
+                    <textarea
+                        required
+                        rows="10" 
+                        cols="43"
+                        className="
+                        bg-transparent
+                        border-2
+                        border-rose-700
+                        focus:outline-none
+                        text-black
+                        "
+                        placeholder="Olá , gostaria de fazer a encomenda de uma torta de aniversário , poderia me dizer quais as tortas disponíveis?"
+                        ref={messageRef}
+                    />
+                </div>
+                <button 
+                    type="submit"
+                    className="
+                    inline-block 
+                    px-6 py-2 
+                    border-2 border-red-600 
+                    text-red-600 font-medium text-xs 
+                    leading-tight uppercase  
+                    hover:bg-black hover:bg-opacity-5 
+                    focus:outline-none focus:ring-0 
+                    transition duration-150 ease-in-out
+                "
+                >
+                    Enviar via WhatsApp
+                </button>
+            </form>
         </div>
     )
 }
