@@ -14,13 +14,13 @@ const Footer = () => {
                         <Link href='/'>Inicio</Link>
                     </li>
                     <li className="md:p-4">
-                        <Link href='/#catalog' >Catalogo</Link>
+                        <Link href='/#catalog' scroll={false}>Catalogo</Link>
                     </li>
                     <li className="md:p-4">
-                        <Link href='/#about' >Sobre</Link>
+                        <Link href='/#about' scroll={false}>Sobre</Link>
                     </li>
                     <li className="md:p-4">
-                        <Link href='/#testimonials' >Depoimentos</Link>
+                        <Link href='/#testimonials' scroll={false}>Depoimentos</Link>
                     </li>
                     <li className="md:p-4">
                         <Link href='https://www.instagram.com/' target={'https://www.instagram.com/'}>
@@ -28,7 +28,7 @@ const Footer = () => {
                         </Link>
                     </li>
                     <li className="md:p-4">
-                        <Link href='https://www.instagram.com/' target={'https://www.instagram.com/'}>
+                        <Link href='https://www.whatsapp.com/?lang=pt_br' target={'https://www.whatsapp.com/?lang=pt_br'}>
                             <FaWhatsapp size={20} />
                         </Link>
                     </li>
@@ -37,7 +37,7 @@ const Footer = () => {
             <div className="bg-[#e9eaea]">
                 <Link href='https://www.instagram.com/' target={'https://www.instagram.com/'}>
                     <p className="flex justify-center text-black text-[0.9rem]">
-                        Made with <span className="flex items-center px-1 text-rose-700"><FaHeart size={17}/></span> by Versiani Works
+                        Feito com <span className="flex items-center px-1 text-rose-700"><FaHeart size={17}/></span> por Versiani Works
                     </p>
                 </Link>
             </div>

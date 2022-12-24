@@ -25,19 +25,19 @@ const Navbar = () => {
                         <Link href='/' className={resolveSelectedMenuOption('inicio')} onClick={() => {setMenuOption('inicio')}}>Inicio</Link>
                     </li>
                     <li className="p-4">
-                        <Link href='/#catalog' className={resolveSelectedMenuOption('catalogo')} onClick={() => {setMenuOption('catalogo')}}>Catalogo</Link>
+                        <Link href='/#catalog' scroll={false} className={resolveSelectedMenuOption('catalogo')} onClick={() => {setMenuOption('catalogo')}}>Catalogo</Link>
                     </li>
                     <li className="p-4">
-                        <Link href='/#about' className={resolveSelectedMenuOption('sobre')} onClick={() => {setMenuOption('sobre')}}>Sobre</Link>
+                        <Link href='/#about' scroll={false} className={resolveSelectedMenuOption('sobre')} onClick={() => {setMenuOption('sobre')}}>Sobre</Link>
                     </li>
                     <li className="p-4">
-                        <Link href='/#testimonials' className={resolveSelectedMenuOption('depoimentos')} onClick={() => {setMenuOption('depoimentos')}}>Depoimentos</Link>
+                        <Link href='/#testimonials' scroll={false} className={resolveSelectedMenuOption('depoimentos')} onClick={() => {setMenuOption('depoimentos')}}>Depoimentos</Link>
                     </li>
                     <li className="p-4">
-                        <Link href='/#contacts' className={resolveSelectedMenuOption('contatos')} onClick={() => {setMenuOption('contatos')}}>Contatos</Link>
+                        <Link href='/#contacts' scroll={false} className={resolveSelectedMenuOption('contatos')} onClick={() => {setMenuOption('contatos')}}>Contatos</Link>
                     </li>
                     <li className="p-4">
-                        <Link href='/#contacte-me' className={resolveSelectedMenuOption('orcamento')} onClick={() => {setMenuOption('orcamento')}}>Orçamento</Link>
+                        <Link href='/#contacte-me' scroll={false} className={resolveSelectedMenuOption('orcamento')} onClick={() => {setMenuOption('orcamento')}}>Orçamento</Link>
                     </li>
                 </ul>
                 {/**Mobile Button */}
@@ -60,19 +60,19 @@ const Navbar = () => {
                             <Link href='/'>Inicio</Link>
                         </li>
                         <li onClick={handleNav} className="p-4 text-4xl hover:text-rose-700">
-                            <Link href='/#catalog'>Catalogo</Link>
+                            <Link href='/#catalog' scroll={false}>Catalogo</Link>
                         </li>
                         <li onClick={handleNav} className="p-4 text-4xl hover:text-rose-700">
-                            <Link href='/#about'>Sobre</Link>
+                            <Link href='/#about' scroll={false}>Sobre</Link>
                         </li>
                         <li onClick={handleNav} className="p-4 text-4xl hover:text-rose-700">
-                            <Link href='/#testimonials'>Depoimentos</Link>
+                            <Link href='/#testimonials' scroll={false}>Depoimentos</Link>
                         </li>
                         <li onClick={handleNav} className="p-4 text-4xl hover:text-rose-700">
-                            <Link href='/#contacts'>Contatos</Link>
+                            <Link href='/#contacts' scroll={false}>Contatos</Link>
                         </li>
                         <li onClick={handleNav} className="p-4 text-4xl hover:text-rose-700">
-                            <Link href='/#contacte-me'>Orçamento</Link>
+                            <Link href='/#contacte-me' scroll={false}>Orçamento</Link>
                         </li>
                     </ul>
                 </div>
