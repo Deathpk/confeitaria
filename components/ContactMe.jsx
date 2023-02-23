@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-
 const ContactMe = () => {
     const nameRef = useRef();
     const messageRef = useRef();
@@ -9,7 +8,11 @@ const ContactMe = () => {
         let whatsAppNumber = "5531995411115";
         let message = encodeURI(`Olá! me chamo ${nameRef.current.value} e conheci o seu trabalho pelo seu site!\n Mensagem: ${messageRef.current.value}`);
         let apiLink = `https://api.whatsapp.com/send?phone=${whatsAppNumber}&text=${message}`;
-        window.location.replace(apiLink);
+
+        let anchor = document.createElement('a');
+        anchor.target="_blank";
+        anchor.href=apiLink;
+        anchor.click();
     }
     
     return (
