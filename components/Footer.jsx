@@ -1,4 +1,3 @@
-import React, {useState} from "react";
 import Link from "next/link";
 import {FaInstagram, FaHeart, FaWhatsapp} from "react-icons/fa";
 
@@ -35,7 +34,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className="bg-[#e9eaea]">
-                <Link href='https://www.instagram.com/' target={'https://www.instagram.com/'}>
+                <Link href='https://www.linkedin.com/in/michel-versianidev/' target={'https://www.linkedin.com/in/michel-versianidev/'}>
                     <p className="flex justify-center text-black text-[0.9rem]">
                         Feito com <span className="flex items-center px-1 text-rose-700"><FaHeart size={17}/></span> por Versiani Works
                     </p>
