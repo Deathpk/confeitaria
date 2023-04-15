@@ -1,5 +1,6 @@
 
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import Image from "next/image";
 
 const CartDrawer = ({ cart, isOpen, onCartDisplayChange, onProductQuantityChange, onOrderFinish, totalValue }) => {
 
@@ -39,8 +40,7 @@ const CartDrawer = ({ cart, isOpen, onCartDisplayChange, onProductQuantityChange
                         return(
                             <li key={item.id} className="mt-5 border-white border-2 p-2 rounded">
                                 <div className="">
-                                    <img
-                                        placeholder="blur"
+                                    <Image
                                         className="max-h-[150px]" 
                                         width={150} 
                                         height={250} 
@@ -70,7 +70,7 @@ const CartDrawer = ({ cart, isOpen, onCartDisplayChange, onProductQuantityChange
                 }
                 <li>Total: {totalValue} $</li>
             </ul>
-            <button className="mx-2 my-4 border-2 p-1 rounded" onClick={onOrderFinish}>Finalizar pedido</button>
+            <button disabled={cart.length === 0} className="mx-2 my-4 border-2 p-1 rounded disabled:bg-slate-400" onClick={onOrderFinish}>Finalizar pedido</button>
         </div>
     );
 }
