@@ -1,10 +1,12 @@
 import Link from "next/link";
-import {AiOutlineMenu, AiOutlineClose} from "react-icons/ai";
-import React, {useState} from "react";
+import {AiOutlineMenu, AiOutlineClose, AiOutlineShoppingCart} from "react-icons/ai";
+import React, {useState, useContext} from "react";
+import { CartContext } from '../contexts/CartContext';
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
     const [selectedMenuOption, setMenuOption] = useState('');
+    const { totalItems, handleCartDisplay } = useContext(CartContext);
 
     const handleNav = () => {
         setNav(!nav);
@@ -38,6 +40,16 @@ const Navbar = () => {
                     </li>
                     <li className="p-4">
                         <Link href='/#contacte-me' scroll={false} className={resolveSelectedMenuOption('orcamento')} onClick={() => {setMenuOption('orcamento')}}>Orçamento</Link>
+                    </li>
+                    <li className="p-4">
+                        <button className="relative flex" onClick={handleCartDisplay}>
+                            <AiOutlineShoppingCart size={20} className="text-black mt-1"/>
+                            <span className="text-sm mt-1 ml-1">{totalItems}</span>
+                            {
+                                totalItems > 0 &&
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75 py-4 px-4s"></span>
+                            }
+                        </button>
                     </li>
                 </ul>
                 {/**Mobile Button */}

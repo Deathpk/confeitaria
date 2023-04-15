@@ -21,8 +21,11 @@ const Catalog = () => {
                 <button className={resolveCategoryUnderlinedTitle('cakes')} onClick={() => {handleCategory('cakes')}}>Bolos</button>
                 <button className={resolveCategoryUnderlinedTitle('pies')} onClick={() => {handleCategory('pies')}}>Tortas</button>
                 <button className={resolveCategoryUnderlinedTitle('cupcakes')} onClick={() => {handleCategory('cupcakes')}}>Cupcakes</button>
+                <button className={resolveCategoryUnderlinedTitle('candies')} onClick={() => {handleCategory('candies')}}>Docinhos</button>
             </div>
-            <Gallery images={CatalogData[currentCategory]}/>
+            <Gallery 
+                products={CatalogData[currentCategory]} 
+            />
         </div>
     )
 }

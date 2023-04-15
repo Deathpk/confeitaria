@@ -17,6 +17,8 @@ const ContactMe = () => {
     
     return (
         <div className="mt-5" id="contacte-me">
+            <h1 className="flex justify-center text-black font-bold text-6xl cursive-title">" Não encontrou oque procurava</h1>
+            <h1 className="flex justify-center text-black font-bold text-6xl cursive-title mb-10">ou tem algo especial em mente? "</h1>
             <h1 className="flex justify-center text-black font-bold text-6xl cursive-title">Faça um orçamento</h1>
             <h2 className="flex justify-center text-3xl font-bold cursive-title text-black">Via WhatsApp</h2>
             <form className="w-full max-w-sm flex-col items-center justify-center md:mx-[37%] my-5" onSubmit={handleFormSubmit}>
@@ -43,6 +45,7 @@ const ContactMe = () => {
                         rows="10" 
                         cols="43"
                         className="
+                        resize-none
                         bg-transparent
                         border-2
                         border-rose-700
