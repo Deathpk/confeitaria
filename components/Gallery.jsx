@@ -31,7 +31,7 @@ const Gallery = ({ products }) => {
                                         <div className="flex flex-col">
                                             <span className="text-red-700">{product.price}$</span>
                                             {/* TODO: Chamar a função de adicionar item ao carrinho lá do context. */}
-                                            <button className="bg-red-700 text-white border-2 border-[#e9eaea] mt-2" onClick={() => {addProduct(product)}}>  
+                                            <button className="bg-red-700 text-white border-2 border-[#e9eaea] mt-2 select-none" onClick={() => {addProduct(product)}}>  
                                                 Adicionar ao carrinho
                                             </button>
                                         </div>
