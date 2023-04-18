@@ -1,11 +1,22 @@
 import React, {useState} from "react";
 import Gallery from "../components/Gallery";
 import {CatalogData} from "../components/CatalogData";
+import Pagination from './Pagination';
+import {paginate} from '../helpers/paginate';
 
 const Catalog = () => {
     const [currentCategory, setCurrentCategory] = useState('cakes');
+    const [currentPage, setCurrentPage] = useState(1);
+    const pageSize = 9;
+    const catalogData = paginate(CatalogData[currentCategory], currentPage, pageSize);
+
     const handleCategory = (category) => {
         setCurrentCategory(category);
+        setCurrentPage(1);
+    }
+
+    function onPageChange(page) {
+        setCurrentPage(page);
     }
 
     const resolveCategoryUnderlinedTitle = (categoryName) => {
@@ -24,7 +35,13 @@ const Catalog = () => {
                 <button className={resolveCategoryUnderlinedTitle('candies')} onClick={() => {handleCategory('candies')}}>Docinhos</button>
             </div>
             <Gallery 
-                products={CatalogData[currentCategory]} 
+                products={catalogData} 
+            />
+            <Pagination
+                items={CatalogData[currentCategory].length}
+                pageSize={pageSize}
+                currentPage={currentPage}
+                onPageChange={onPageChange}
             />
         </div>
     )

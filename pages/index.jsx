@@ -6,12 +6,19 @@ import Contacts from "../components/Contacts";
 import ContactMe from "../components/ContactMe";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { CartContext } from '../contexts/CartContext';
 import CartDrawer from "../components/CartDrawer";
 
 export default function Home() {
-  const { cart, isCartOpen, handleCartDisplay, changeQuantity, finishOrder, totalValue } = useContext(CartContext);
+  const { 
+    cart,
+    isCartOpen, 
+    handleCartDisplay, 
+    changeQuantity, 
+    finishOrder, 
+    totalValue 
+  } = useContext(CartContext);
 
   return (
       <div>

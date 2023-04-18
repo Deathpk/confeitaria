@@ -19,6 +19,15 @@ const Navbar = () => {
     return (
         <div className="fixed left-0 top-0 w-full z-10 bg-white">
             <div className="m-auto flex justify-between items-center p-4 text-white">
+                {/* Mobile Cart Icon Display. */}
+                <button className="md:hidden relative flex" onClick={handleCartDisplay}>
+                    <AiOutlineShoppingCart size={20} className="text-black mt-1"/>
+                    <span className="text-sm mt-1 ml-1 text-black">{totalItems}</span>
+                    {
+                        totalItems > 0 &&
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75 py-4 px-4s"></span>
+                    }
+                </button>
                 <Link href="/">
                     <h1 className="text-black font-bold text-4xl cursive-title">Cake Bakery</h1>
                 </Link>
@@ -52,6 +61,7 @@ const Navbar = () => {
                         </button>
                     </li>
                 </ul>
+
                 {/**Mobile Button */}
                 <div onClick={handleNav} className="sm:hidden block z-10">
                     {

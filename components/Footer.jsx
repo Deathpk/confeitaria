@@ -2,6 +2,19 @@ import Link from "next/link";
 import {FaInstagram, FaHeart, FaWhatsapp} from "react-icons/fa";
 
 const Footer = () => {
+
+    function handleWhatsAppRedirect() {
+        let whatsAppNumber = "5531995411115";
+        let message = encodeURI(`Olá! conheci o seu trabalho pelo seu site e gostaria de tirar algumas dúvidas`);
+        let apiLink = `https://api.whatsapp.com/send?phone=${whatsAppNumber}&text=${message}`;
+    
+        let anchor = document.createElement('a');
+        anchor.target="_blank";
+        anchor.href=apiLink;
+        anchor.click();
+    }
+
+
     return(
         <div className="bg-[#9f0311]">
             <div className="m-auto flex justify-between items-center p-4 text-white">
@@ -27,7 +40,7 @@ const Footer = () => {
                         </Link>
                     </li>
                     <li className="md:p-4">
-                        <Link href='https://www.whatsapp.com/?lang=pt_br' target={'https://www.whatsapp.com/?lang=pt_br'}>
+                        <Link  href="#" onClick={handleWhatsAppRedirect}>
                             <FaWhatsapp size={20} />
                         </Link>
                     </li>

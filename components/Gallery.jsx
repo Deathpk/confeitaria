@@ -1,5 +1,5 @@
 import Image from 'next/legacy/image';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from '../contexts/CartContext';
 
 const Gallery = ({ products }) => {
